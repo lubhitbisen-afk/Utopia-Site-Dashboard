@@ -419,24 +419,6 @@ export default function Schedule({ data, onAdd, onUpdate, onDelete }) {
         </div>
       </div>
 
-      {/* Critical Blockers Alerts */}
-      {blockingTasks.length > 0 && (
-        <div className="alert-banner" style={{ background: 'rgba(239, 68, 68, 0.08)', borderColor: 'rgba(239, 68, 68, 0.2)' }}>
-          <div style={{ display: 'flex', gap: '8px', alignItems: 'flex-start' }}>
-            <ShieldAlert size={20} style={{ color: '#EF4444', flexShrink: 0, marginTop: '2px' }} />
-            <div>
-              <strong style={{ color: '#EF4444', fontSize: '14px' }}>Active Schedule Blockers detected:</strong>
-              <ul style={{ margin: '6px 0 0 16px', fontSize: '13px', color: 'var(--text-secondary)' }}>
-                {blockingTasks.map((b, idx) => (
-                  <li key={idx}>
-                    <span style={{ color: 'var(--text-primary)', fontWeight: 'bold' }}>{b.task.activity}</span> is incomplete and blocking <span style={{ color: 'var(--text-primary)', fontWeight: '600' }}>{b.blocking}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-        </div>
-      )}
 
       {/* Gantt Visualization */}
       {ganttData && (
